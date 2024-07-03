@@ -3,7 +3,12 @@
          <title>To-Do List</title>
      </head>
      <body>
-         <h1>Welcome to the To-Do List Home Page</h1>
-         <p>This is the main page of your To-Do List application.</p>
+         <h1>TO DO</h1>
+         <ul>
+             {% for task in tasks %}
+                <li> {{ task.title }} </li>
+                <li> {{ task.completed }} </li>
+             {% endfor %}
+         </ul>
      </body>
 </html>
