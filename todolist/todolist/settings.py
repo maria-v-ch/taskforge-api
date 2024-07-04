@@ -82,7 +82,12 @@ DATABASES = {
         # 'HOST': 'localhost',
         # 'PASSWORD': 'andtime',
         # 'PORT': '5432',
-    }
+    },
+    'labsite;': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'labsite',
+        'USER': 'a1',
+    },
 }
 
 
