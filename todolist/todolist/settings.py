@@ -75,19 +75,13 @@ WSGI_APPLICATION = 'todolist.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {},
-    'todolist': {
+    'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'todolist',
         'USER': 'a1',
         # 'HOST': 'localhost',
         # 'PASSWORD': 'andtime',
         # 'PORT': '5432',
-    },
-    'labsite': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'labsite',
-        'USER': 'a1',
     },
 }
 
