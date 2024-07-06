@@ -55,9 +55,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-if DEBUG and ENV_TYPE in ('local',):
-    MIDDLEWARE.append('base.middlewares.DebuggerMiddleware')
-
 ROOT_URLCONF = 'todolist.urls'
 
 TEMPLATES = [
