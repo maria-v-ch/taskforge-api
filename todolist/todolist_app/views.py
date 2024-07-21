@@ -14,29 +14,39 @@ class TaskViewSet(viewsets.ModelViewSet):
     serializer_class = TaskSerializer
 
 
-class CommentCreateView(generics.CreateAPIView):
+class CommentListCreateAPIView(generics.ListCreateAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
 
 
-class CommentListView(generics.ListAPIView):
+class CommentRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
 
 
-class CommentRetrieveView(generics.RetrieveAPIView):
-    queryset = Comment.objects.all()
-    serializer_class = CommentSerializer
-
-
-class CommentUpdateView(generics.UpdateAPIView):
-    queryset = Comment.objects.all()
-    serializer_class = CommentSerializer
-
-
-class CommentDestroyView(generics.DestroyAPIView):
-    queryset = Comment.objects.all()
-    serializer_class = CommentSerializer
+# class CommentCreateAPIView(generics.CreateAPIView):
+#     queryset = Comment.objects.all()
+#     serializer_class = CommentSerializer
+#
+#
+# class CommentListAPIView(generics.ListAPIView):
+#     queryset = Comment.objects.all()
+#     serializer_class = CommentSerializer
+#
+#
+# class CommentRetrieveAPIView(generics.RetrieveAPIView):
+#     queryset = Comment.objects.all()
+#     serializer_class = CommentSerializer
+#
+#
+# class CommentUpdateAPIView(generics.UpdateAPIView):
+#     queryset = Comment.objects.all()
+#     serializer_class = CommentSerializer
+#
+#
+# class CommentDestroyAPIView(generics.DestroyAPIView):
+#     queryset = Comment.objects.all()
+#     serializer_class = CommentSerializer
 
 
 class TagViewSet(viewsets.ModelViewSet):
