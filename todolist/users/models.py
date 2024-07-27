@@ -6,12 +6,12 @@ from django.contrib.auth.models import AbstractUser, UserManager
 class CustomUserManager(UserManager):
     use_in_migrations = True
 
-    def create_user(self, email, password=None, **extra_fields):
+    def _create_user(self, email, password=None, **extra_fields):
         if not email:
             raise ValueError('The email field must be set')
         email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
-        user.set_password(password)
+        user.password = make_password(password)
         user.save(using=self._db)
         return user
 
