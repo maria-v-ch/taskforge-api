@@ -20,6 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 dot_env = os.path.join(BASE_DIR, '.env')
 load_dotenv(dotenv_path=dot_env)
 
+AUTH_USER_MODEL = 'users.User'
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -45,6 +47,7 @@ INSTALLED_APPS = [
     'todolist_app',
     'rest_framework',
     'drf_yasg',
+    'users',
 ]
 
 MIDDLEWARE = [
