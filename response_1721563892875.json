@@ -1,0 +1,16 @@
+{
+  "name": "string",
+  "description": "string",
+  "due_date": "2024-07-21T12:11:08.429000Z",
+  "status": "DRAFT",
+  "comments_count": 1,
+  "comments": [
+    {
+      "id": 7,
+      "text": "test comment as string",
+      "created_at": "2024-07-21T12:09:43.227974Z",
+      "task": 4
+    }
+  ],
+  "tags": []
+}
