@@ -33,6 +33,8 @@ db.sqlite3
 db.sqlite3-journal
 media/
 static/
+
+# Django migrations
 */migrations/*
 !*/migrations/__init__.py  # Keep __init__.py files in migrations
 

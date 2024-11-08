@@ -28,8 +28,8 @@ A Django REST framework-based API for managing todo lists with user authenticati
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd myproject_project
+git clone https://github.com/maria-v-ch/taskforge-api
+cd todolist
 ```
 
 2. Create and activate virtual environment:
