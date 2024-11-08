@@ -1,33 +1,43 @@
-from django.contrib import admin
-from todolist_app.models import Task, Comment, Tag
+"""Admin configuration for the todolist app."""
 
-# TabularInline — отображает связанные объекты в табличном виде. Есть также StackedInline, который отображает их в
-# виде блоков.
+from django.contrib import admin
+
+from .models import Comment, Tag, Task
 
 
 class CommentInline(admin.TabularInline):
-    model = Comment
-    # extra = 0
+    """Inline admin for comments.
 
-    def get_extra(self, request, obj=None, **kwargs):
-        if obj:
-            return 0  # For changing an item
+    TabularInline displays related objects in a tabular format.
+    StackedInline is an alternative that displays them as stacked blocks.
+    """
+
+    model = Comment
+    extra = 0
 
 
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ('name', 'due_date', 'author')
-    search_fields = ('name', 'description', 'author', 'description')
-    list_filter = ('due_date', 'author', 'status')
+    """Admin configuration for Task model."""
 
-    inlines = [
-        CommentInline,
-    ]
+    list_display = ("name", "status", "owner", "created_at", "due_date")
+    search_fields = ("name", "description")
+    list_filter = ("status", "owner", "created_at", "due_date")
+    inlines = [CommentInline]
 
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    search_fields = ['task__name', 'task__description', 'task__author']
+    """Admin configuration for Comment model."""
+
+    list_display = ("text", "task", "created_at")
+    search_fields = ("text", "task__name", "task__description")
+    list_filter = ("task", "created_at")
 
 
-admin.site.register(Tag)
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    """Admin configuration for Tag model."""
+
+    list_display = ("name",)
+    search_fields = ("name",)
